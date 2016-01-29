@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* END CSS Reset */
+
+html {
+    box-sizing: border-box;
+    font-family: "Lato", "Helvetica Neue", helvetica, arial, sans-serif;
+    color: #4c555a;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+
+}
+code, pre, tt {
+    font-family: "Lucida Console","Monaco",monospace;
+    font-size: 0.9rem;
+    color: #d0d0d0;
+    background-color: #272B2D;
+    padding:20px 40px;
+    border-radius: 5px;
+
+    direction: ltr;
+    hyphens: none;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: normal;
+    word-spacing: normal;
+    display:block;
+
+    -moz-box-shadow:    inset 0 0 5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    box-shadow:         inset 0 0 5px rgba(0,0,0,0.1);
+
+}
+
+a, a:visited, a:hover, a:active {
+    color: #de6262;
+    -moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: inherit;
+}
+
+
+
+.clearfix:after,
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: 300px;
+    color: #fff;
+    background-color: #de6262;
+    background-image: linear-gradient(#de6262, #F09179);
+    padding: 60px;
+}
+#content {
+    position: absolute;
+    left: 300px;
+    right: 0px;
+    top: 0;
+    min-height: 1200px;
+    line-height: 1.6;
+}
+h1,
+h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.8em;
+    font-weight: 100;
+}
+#nav h1 {
+    font-size: 3.8em;
+}
+#nav h2 {
+    color: rgba(255, 255, 255, 0.6)
+}
+#nav ul {
+    font-size: 1.2rem;
+    line-height: 2;
+    padding-top: 60px;
+}
+#nav a {
+    color:#fff!important;
+}
+.content-item {
+    background-color: #2D3134;
+}
+.content-item:after {
+    /* clearfix */
+
+    content: "";
+    display: table;
+    clear: both;
+}
+.content-item .body,
+.content-item .code {
+    padding: 60px;
+    float: left;
+}
+.content-item .body {
+    background-color: #F5F7F9;
+    width: 60%;
+    min-height: 980px;
+    
+}
+.content-item .code {
+    color: #d0d4d7;
+    width: 40%;
+}
+@media (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+    #nav {
+        width: 200px;
+        padding: 30px;
+    }
+    #content {
+        left: 200px;
+    }
+    .content-item .body,
+    .content-item .code {
+        padding: 30px;
+    }
+}
+@media (max-width: 960px) {
+    #nav {
+        position: static;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(to right, #de6262, #E97E70);
+    }
+    #content {
+        position: static;
+    }
+    .content-item .body,
+    .content-item .code {
+        width: 100%;
+    }
+    #nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+}
+
+
+
+.icon > svg {
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
