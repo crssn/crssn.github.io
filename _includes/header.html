@@ -1,14 +1,21 @@
-<div id="nav">
-  <h1>
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-  </h1>
-  <h2>{{ site.tagline }}</h2>
+<header class="header">
+    <div class="icon-hero">
+      <span class="fa-stack">
+          <i style="display:none;"></i>
+      </span>
+    </div>
+    <h1 title="That's me!"><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <h2 title="These are things that I like to do for work.">{{ site.tagline }}</h2>
+    <p>{{ site.description }}</p>
 
-  <ul>
-    {% for my_page in site.pages %}
-    {% if my_page.title %}
-    <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-    {% endif %}
-    {% endfor %}
-  </ul>
-</div>
+    <!--<ul class="header__nav">-->
+        <!--{% for my_page in site.pages %}-->
+        <!--{% if my_page.title %}-->
+        <!--<li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>-->
+        <!--<li>&bull;</li>-->
+        <!--{% endif %}-->
+        <!--{% endfor %}-->
+    <!--</ul>-->
+
+</header>
+

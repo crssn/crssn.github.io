@@ -3,14 +3,54 @@
 {% include head.html %}
 <body>
 
-{% include header.html %}
-
-<main></main>
 <div id="content">
+    {% include header.html %}
     {{ content }}
-
     {% include footer.html %}
 </div>
 
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script>
+rollTheDice();
+function rollTheDice() {
+
+    var classes = ['ion-paintbucket','ion-ios-world', 'ion-pull-request', 'ion-paper-airplane', 'ion-map','ion-calculator','ion-images','ion-music-note','ion-android-bicycle','ion-ios-lightbulb-outline','ion-coffee','ion-power','ion-erlenmeyer-flask','ion-android-walk','ion-social-github','ion-social-python'];
+    var icon = $('.icon-hero i');
+    var timer;
+
+    icon.fadeToggle( 50, "linear" );
+
+    icon.bind((document.ontouchstart!==null)?'click':'touchstart', function(){
+        changeClass();
+    });
+
+    setRandomClass(100);
+    setTimeout(function(){
+        setRandomClass(200)
+    }, 1000);
+    setTimeout(function(){
+        setRandomClass(400)
+    }, 2000);
+    setTimeout(function(){
+        clearInterval(timer);
+    }, 3000);
+
+    function setRandomClass (interval) {
+        clearInterval(timer);
+        timer = setInterval(function(){
+            changeClass();
+        }, interval );
+    }
+
+    function changeClass(){
+        classes.sort(function() { return 0.5 - Math.random() }); // shuffle the array
+        var randomnumber = Math.floor((Math.random() * classes.length));
+        icon.removeClass();
+        icon.addClass(classes[randomnumber]);
+    }
+
+}
+</script>
 </body>
 </html>

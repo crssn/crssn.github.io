@@ -2,27 +2,31 @@
 layout: default
 ---
 <div class="content-item">
-    <div class="body">
-
-        <h1 class="page-heading">Posts</h1>
-
-        <ul class="post-list">
-            {% for post in site.posts %}
-            <li>
-                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-                <h2>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-            </li>
-            {% endfor %}
-        </ul>
-
-        <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
-
+    <div class="content-item__header">
+        <h2>Wireframing</h2>
     </div>
-    <!--<div class="code">-->
-    <!--&lt;!&ndash;<h2>Test</h2>&ndash;&gt;-->
-    <!--&lt;!&ndash;<code>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</code>&ndash;&gt;-->
-    <!--</div>-->
+    <div class="content-item__body">
+        <img src="img/ride-mockup-cropped.png">
+        <p> </p>
+    </div>
+    <div class="content-item__footer">
+        <span class="content-item__footer__tag">wireframing</span> <span class="content-item__footer__tag">moqups</span>
+    </div>
 </div>
+
+<div class="content-item">
+    <div class="content-item__header">
+        <h2>Poster Design</h2>
+    </div>
+    <div class="content-item__body">
+        <img src="img/DONT_PANIC_4.png">
+        <p>Poster design for music event in Gulpd Cafe, Cork City. </p>
+    </div>
+    <div class="content-item__footer">
+        <span class="content-item__footer__tag">poster design</span> <span class="content-item__footer__tag">photoshop</span>
+    </div>
+</div>
+
+<!--{% for post in site.posts %}-->
+<!--<p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></p>-->
+<!--{% endfor %}-->

@@ -6,13 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Hello
-tagline: crssn-3.2$
+title: Paul Crossan
+tagline: UI/UX Design, Web Development &amp; Strategy
 email: hello@crssn.info
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+ Highly motivated problem-solver, dedicated, results-driven and reliable. Customer focused and creative individual, passionate about software product development and user centered design.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://cv.crssn.info" # the base hostname & protocol for your site
 twitter_username: crssn
@@ -20,3 +18,5 @@ github_username:  crssn
 
 # Build settings
 markdown: kramdown
+
+permalink: /:title/
