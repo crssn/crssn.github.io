@@ -1,64 +1,19 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-/* END CSS Reset */
-
+/* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
-    font-family: "Lato", "Helvetica Neue", helvetica, arial, sans-serif;
-    color: #4c555a;
-    font-size: 18px;
-    text-rendering: optimizeLegibility;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
-body {
 
+html {
+    font-family: "Lato", "Helvetica Neue", helvetica, arial, sans-serif;
+    color: #4c555a;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+body {
+    background-color: #F5F7F9;
 }
 code, pre, tt {
     font-family: "Lucida Console","Monaco",monospace;
@@ -66,6 +21,9 @@ code, pre, tt {
     color: #d0d0d0;
     background-color: #272B2D;
     padding:20px 40px;
+
+    margin:20px 0;
+
     border-radius: 5px;
 
     direction: ltr;
@@ -78,7 +36,9 @@ code, pre, tt {
 
     -moz-box-shadow:    inset 0 0 5px rgba(0,0,0,0.1);
     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-    box-shadow:         inset 0 0 5px rgba(0,0,0,0.1);
+    /*box-shadow:         inset 0 0 5px rgba(0,0,0,0.1);*/
+
+    box-shadow:0 0 3px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 rgba(0, 0, 0, 0.5);
 
 }
 
@@ -114,6 +74,9 @@ a:hover, a:active {
     color: #fff;
     background-color: #de6262;
     background-image: linear-gradient(#de6262, #F09179);
+
+    /*background:rgba(0, 0, 0, 0) linear-gradient(135deg, #333973 0%, #673a5d 100%) repeat scroll 0 0;*/
+
     padding: 60px;
 }
 #content {
@@ -121,8 +84,14 @@ a:hover, a:active {
     left: 300px;
     right: 0px;
     top: 0;
-    min-height: 1200px;
+    /*min-height: 1200px;*/
     line-height: 1.6;
+
+    /*-moz-transition: all .1s ease-in;*/
+    /*-o-transition: all .1s ease-in;*/
+    /*-webkit-transition: all .1s ease-in;*/
+    /*transition: all .1s ease-in;*/
+
 }
 h1,
 h2 {
@@ -139,7 +108,7 @@ h2 {
 #nav ul {
     font-size: 1.2rem;
     line-height: 2;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 #nav a {
     color:#fff!important;
@@ -149,7 +118,6 @@ h2 {
 }
 .content-item:after {
     /* clearfix */
-
     content: "";
     display: table;
     clear: both;
@@ -162,26 +130,61 @@ h2 {
 .content-item .body {
     background-color: #F5F7F9;
     width: 60%;
-    min-height: 980px;
-    
+    min-height:100vh;
 }
 .content-item .code {
     color: #d0d4d7;
     width: 40%;
 }
+
+.content-item .body p {
+    margin:20px 0;
+}
+
+
+footer .footer-left {
+    padding:40px 60px;
+    width:60%;
+    float: left;
+    background-color: #D1D8DF;
+}
+footer .footer-right {
+    padding:40px 60px;
+    width:40%;
+    float: left;
+    background-color: #272B2D;
+}
+footer .footer-right a {
+    color:#090D0F;
+}
+
+
+
+.icon > svg {
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+
+
+
 @media (max-width: 1200px) {
     html {
         font-size: 16px;
     }
     #nav {
-        width: 200px;
+        width: 250px;
         padding: 30px;
     }
     #content {
-        left: 200px;
+        left: 250px;
     }
     .content-item .body,
-    .content-item .code {
+    .content-item .code,
+    footer .footer-left,
+    footer .footer-right {
         padding: 30px;
     }
 }
@@ -196,8 +199,19 @@ h2 {
         position: static;
     }
     .content-item .body,
-    .content-item .code {
+    .content-item .code,
+    footer .footer-left,
+    footer .footer-right
+    {
         width: 100%;
+    }
+    footer .footer-left {
+        margin-top: 120px;
+        background-color: #2D3134;
+    }
+    .content-item .body {
+        height:auto;
+        min-height: 400px;
     }
     #nav ul li {
         display: inline;
@@ -207,9 +221,12 @@ h2 {
 
 
 
-.icon > svg {
-    display: inline-block;
-    height: 16px;
-    vertical-align: middle;
-    width: 16px;
+img {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    margin: 0 0 30px;
+    padding: 20px;
+    width:100%;
 }
+
+
