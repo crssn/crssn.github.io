@@ -161,8 +161,6 @@ h2 {
     font-size: 0.8em;
 }
 
-
-
 /* Large Monitor */
 
 @media only screen and (min-width: 1200px) {
@@ -221,19 +219,4 @@ h2 {
     .content-item__header h2 {
         font-size: 1.1em;
     }
-}
-
-
-
-.wrapper:hover .fa-stack{
-    color: red;
-    transition: 0.9s;
-    transform: rotateY(180deg);
-}
-.wrapper{
-    display: inline-block;
-    width: 200px;
-    border: 1px solid red;
-    overflow: hidden;
-    text-align: center;
 }
