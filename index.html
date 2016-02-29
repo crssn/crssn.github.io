@@ -1,32 +1,21 @@
 ---
 layout: default
 ---
+{% for post in site.posts %}
 <div class="content-item">
     <div class="content-item__header">
-        <h2>Wireframing</h2>
+        <!--<h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>-->
+        <h2>{{ post.title }}</h2>
     </div>
     <div class="content-item__body">
-        <img src="img/ride-mockup-cropped.png">
-        <p> </p>
+        {% assign image = post.images[0] %}
+        {% include image.html image=image %}
+        {{ post.excerpt }}
     </div>
     <div class="content-item__footer">
-        <span class="content-item__footer__tag">wireframing</span> <span class="content-item__footer__tag">moqups</span>
+        {% for category in post.categories %}
+        <span class="content-item__footer__tag">{{category}}</span>
+        {% endfor %}
     </div>
 </div>
-
-<div class="content-item">
-    <div class="content-item__header">
-        <h2>Poster Design</h2>
-    </div>
-    <div class="content-item__body">
-        <img src="img/DONT_PANIC_4.png">
-        <p>Poster design for music event in Gulpd Cafe, Cork City. </p>
-    </div>
-    <div class="content-item__footer">
-        <span class="content-item__footer__tag">poster design</span> <span class="content-item__footer__tag">photoshop</span>
-    </div>
-</div>
-
-<!--{% for post in site.posts %}-->
-<!--<p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></p>-->
-<!--{% endfor %}-->
+{% endfor %}

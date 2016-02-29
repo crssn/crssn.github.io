@@ -11,6 +11,9 @@ layout: default
             {{ content }}
         </div>
         <div class="content-item__footer">
+            {% for category in page.categories %}
+            <span class="content-item__footer__tag">{{category}}</span>
+            {% endfor %}
         </div>
     </div>
 </article>
